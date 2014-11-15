@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+CSFILES=$(git status --porcelain | egrep '.cs$' | egrep '^(A | M)' | awk '{ print $2 }')
+
+echo "$CSFILES" | while read CSFILE; do
+    echo "pre-commit: Checking $CSFILE..."
+done
+
+read -r -p "pre-commit: Violations found. Commit anyway? [y/N] " response
+
+if [[ $response =~ ^y ]]; then
+    exit 0
+else
+    echo "pre-commit: Aborting commit."
+    exit 1
+fi
