@@ -8,7 +8,7 @@ BRANCH=$(git symbolic-ref --short HEAD)
 # If the branch name starts with digits followed by a dash
 if [[ "$BRANCH" =~ ^[0-9]+- ]]; then
     # The first line of the commit message will be "Card #NNN - "
-    echo "$BRANCH" | perl -n -e'/^([0-9]+)/ && print "Card #$1 - "' > "$1"
+    echo "$BRANCH" | perl -n -e'/^([0-9]+)/ && print "Card #$1 - \n\n"' > "$1"
 fi
 
 git status | awk '{ print "# " $0 }' >> "$1"
