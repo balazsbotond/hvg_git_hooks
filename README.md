@@ -12,4 +12,4 @@ Három dolgot csinál:
 
 ##pre-commit
 
-Az összes megváltozott vagy újonnan hozzáadott `.cs` fájlra lefuttatja a *StyleCop*ot, és ha volt bennük hiba, megkérdezi, hogy tényleg szeretnénk-e commitolni.
+Az összes megváltozott vagy újonnan hozzáadott `.cs` fájlra lefuttatja a StyleCopot, és ha volt bennük hiba, megkérdezi, hogy tényleg szeretnénk-e commitolni.
