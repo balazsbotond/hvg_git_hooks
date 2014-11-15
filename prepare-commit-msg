@@ -11,7 +11,10 @@ if [[ "$BRANCH" =~ ^[0-9]+- ]]; then
     echo "$BRANCH" | perl -n -e'/^([0-9]+)/ && print "Card #$1 - \n\n"' > "$1"
 fi
 
+# Include 'git status' output (commented out)
 git status | awk '{ print "# " $0 }' >> "$1"
+
+# Include a diff of what is being added (commented out)
 git diff --cached | awk '{ print "# " $0 }' >> "$1"
 
 echo "prepare-commit-msg: done."
